@@ -404,3 +404,37 @@ int DNACodeDecode(char* string, char* result)
 	}
 	return 1;
 }
+
+int RemoveSpace(char* string, char* result)
+{
+	int i = 0, j = 0;
+	while (string[i] != NULL)
+	{
+		if (string[i] == ' ')
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			result[j] = string[i];
+			i++;
+			j++;
+		}
+	}
+	return 1;
+}
+
+int ReverseHex(char* string, char* result)
+{
+	int length = strlen(string);
+	int i, j;
+	j = length - 1;
+	for (i = 0; i < length; i += 2)
+	{
+		result[j - 1] = string[i];
+		result[j] = string[i + 1];
+		j -= 2;
+	}
+	return 1;
+}
