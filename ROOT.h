@@ -438,3 +438,37 @@ int ReverseHex(char* string, char* result)
 	}
 	return 1;
 }
+
+int ByteROL(unsigned int value, int shift)
+{
+	unsigned int rightshift, leftshift;
+	if (value >= 256)
+	{
+		return -1;
+	}
+	shift = shift % 8;
+	if (shift == 0)
+	{
+		return value;
+	}
+	leftshift = value << shift;
+	rightshift = value >> (8 - shift);
+	return (char)leftshift | rightshift;
+}
+
+int ByteROR(unsigned int value, int shift)
+{
+	unsigned int rightshift, leftshift;
+	if (value >= 256)
+	{
+		return -1;
+	}
+	shift = shift % 8;
+	if (shift == 0)
+	{
+		return value;
+	}
+	rightshift = value >> shift;
+	leftshift = value << (8 - shift);
+	return (char)rightshift | leftshift;
+}
