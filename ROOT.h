@@ -3,17 +3,17 @@
 #include<stdlib.h>
 #include<string.h>
 
-int DNACodeDecode(char* string, char* result)
+int DNACodeDecode(char* Source, char* Destination)
 {
 	int i, j;
 	j = 0;
 	for (i = 0; i < 1000; i += 3)
 	{
-		if (string[i] == NULL)
+		if (Source[i] == NULL)
 		{
 			break;
 		}
-		if ((string[i] != 'A' && string[i] != 'C' && string[i] != 'G' && string[i] != 'T') || (string[i + 1] != 'A' && string[i + 1] != 'C' && string[i + 1] != 'G' && string[i + 1] != 'T') || (string[i + 2] != 'A' && string[i + 2] != 'C' && string[i + 2] != 'G' && string[i + 2] != 'T'))
+		if ((Source[i] != 'A' && Source[i] != 'C' && Source[i] != 'G' && Source[i] != 'T') || (Source[i + 1] != 'A' && Source[i + 1] != 'C' && Source[i + 1] != 'G' && Source[i + 1] != 'T') || (Source[i + 2] != 'A' && Source[i + 2] != 'C' && Source[i + 2] != 'G' && Source[i + 2] != 'T'))
 		{
 			return -1;
 		}
@@ -21,382 +21,382 @@ int DNACodeDecode(char* string, char* result)
 		{
 			j++;
 		}
-		if (string[i] == 'A')
+		if (Source[i] == 'A')
 		{
-			if (string[i + 1] == 'A')
+			if (Source[i + 1] == 'A')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'a';
+					Destination[j] = 'a';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'b';
+					Destination[j] = 'b';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'c';
+					Destination[j] = 'c';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'd';
+					Destination[j] = 'd';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'C')
+			if (Source[i + 1] == 'C')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'e';
+					Destination[j] = 'e';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'f';
+					Destination[j] = 'f';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'g';
+					Destination[j] = 'g';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'h';
+					Destination[j] = 'h';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'G')
+			if (Source[i + 1] == 'G')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'i';
+					Destination[j] = 'i';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'j';
+					Destination[j] = 'j';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'k';
+					Destination[j] = 'k';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'l';
+					Destination[j] = 'l';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'T')
+			if (Source[i + 1] == 'T')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'm';
+					Destination[j] = 'm';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'n';
+					Destination[j] = 'n';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'o';
+					Destination[j] = 'o';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'p';
+					Destination[j] = 'p';
 					continue;
 				}
 			}
 		}
-		if (string[i] == 'C')
+		if (Source[i] == 'C')
 		{
-			if (string[i + 1] == 'A')
+			if (Source[i + 1] == 'A')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'q';
+					Destination[j] = 'q';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'r';
+					Destination[j] = 'r';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 's';
+					Destination[j] = 's';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 't';
+					Destination[j] = 't';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'C')
+			if (Source[i + 1] == 'C')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'u';
+					Destination[j] = 'u';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'v';
+					Destination[j] = 'v';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'w';
+					Destination[j] = 'w';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'x';
+					Destination[j] = 'x';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'G')
+			if (Source[i + 1] == 'G')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'y';
+					Destination[j] = 'y';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'z';
+					Destination[j] = 'z';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'A';
+					Destination[j] = 'A';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'B';
+					Destination[j] = 'B';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'T')
+			if (Source[i + 1] == 'T')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'C';
+					Destination[j] = 'C';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'D';
+					Destination[j] = 'D';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'E';
+					Destination[j] = 'E';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'F';
+					Destination[j] = 'F';
 					continue;
 				}
 			}
 		}
-		if (string[i] == 'G')
+		if (Source[i] == 'G')
 		{
-			if (string[i + 1] == 'A')
+			if (Source[i + 1] == 'A')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'G';
+					Destination[j] = 'G';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'H';
+					Destination[j] = 'H';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'I';
+					Destination[j] = 'I';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'J';
+					Destination[j] = 'J';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'C')
+			if (Source[i + 1] == 'C')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'K';
+					Destination[j] = 'K';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'L';
+					Destination[j] = 'L';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'M';
+					Destination[j] = 'M';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'N';
+					Destination[j] = 'N';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'G')
+			if (Source[i + 1] == 'G')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'O';
+					Destination[j] = 'O';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'P';
+					Destination[j] = 'P';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'Q';
+					Destination[j] = 'Q';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'R';
+					Destination[j] = 'R';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'T')
+			if (Source[i + 1] == 'T')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'S';
+					Destination[j] = 'S';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'T';
+					Destination[j] = 'T';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'U';
+					Destination[j] = 'U';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'V';
+					Destination[j] = 'V';
 					continue;
 				}
 			}
 		}
-		if (string[i] == 'T')
+		if (Source[i] == 'T')
 		{
-			if (string[i + 1] == 'A')
+			if (Source[i + 1] == 'A')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = 'W';
+					Destination[j] = 'W';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = 'X';
+					Destination[j] = 'X';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = 'Y';
+					Destination[j] = 'Y';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = 'Z';
+					Destination[j] = 'Z';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'C')
+			if (Source[i + 1] == 'C')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = '1';
+					Destination[j] = '1';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = '2';
+					Destination[j] = '2';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = '3';
+					Destination[j] = '3';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = '4';
+					Destination[j] = '4';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'G')
+			if (Source[i + 1] == 'G')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = '5';
+					Destination[j] = '5';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = '6';
+					Destination[j] = '6';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = '7';
+					Destination[j] = '7';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = '8';
+					Destination[j] = '8';
 					continue;
 				}
 			}
-			if (string[i + 1] == 'T')
+			if (Source[i + 1] == 'T')
 			{
-				if (string[i + 2] == 'A')
+				if (Source[i + 2] == 'A')
 				{
-					result[j] = '9';
+					Destination[j] = '9';
 					continue;
 				}
-				if (string[i + 2] == 'C')
+				if (Source[i + 2] == 'C')
 				{
-					result[j] = '0';
+					Destination[j] = '0';
 					continue;
 				}
-				if (string[i + 2] == 'G')
+				if (Source[i + 2] == 'G')
 				{
-					result[j] = ' ';
+					Destination[j] = ' ';
 					continue;
 				}
-				if (string[i + 2] == 'T')
+				if (Source[i + 2] == 'T')
 				{
-					result[j] = '.';
+					Destination[j] = '.';
 					continue;
 				}
 			}
@@ -405,70 +405,101 @@ int DNACodeDecode(char* string, char* result)
 	return 1;
 }
 
-int RemoveSpace(char* string, char* result)
+int RemoveSpace(char* Source, char* Destination)
 {
-	int i = 0, j = 0;
-	while (string[i] != NULL)
+	unsigned long long int i = 0, j = 0;
+
+	while (Source[i] != NULL)
 	{
-		if (string[i] == ' ')
+		if (Source[i] == ' ')
 		{
 			i++;
 			continue;
 		}
 		else
 		{
-			result[j] = string[i];
+			Destination[j] = Source[i];
 			i++;
 			j++;
 		}
 	}
-	return 1;
+
+	return 0;
 }
 
-int ReverseHex(char* string, char* result)
+int ReverseHex(char* Source, char* Destination)
 {
-	int length = strlen(string);
-	int i, j;
+	unsigned long long int length;
+	unsigned long long int i, j;
+
+	length = strlen(Source);
+
 	j = length - 1;
+
 	for (i = 0; i < length; i += 2)
 	{
-		result[j - 1] = string[i];
-		result[j] = string[i + 1];
+		Destination[j - 1] = Source[i];
+		Destination[j] = Source[i + 1];
 		j -= 2;
 	}
-	return 1;
+
+	return 0;
 }
 
-int ByteROL(unsigned int value, int shift)
+int ByteROL(int shift, int* Source, int* Destination)
 {
-	unsigned int rightshift, leftshift;
-	if (value >= 256)
+	int leftshift, rightshift;
+
+	if (*Source > 255 || *Source < 0 || shift < 0)
 	{
 		return -1;
 	}
+
+	if (*Source == 0)
+	{
+		*Destination = 0;
+		return 0;
+	}
+
 	shift = shift % 8;
 	if (shift == 0)
 	{
-		return value;
+		*Destination = *Source;
+		return 0;
 	}
-	leftshift = value << shift;
-	rightshift = value >> (8 - shift);
-	return (char)leftshift | rightshift;
+
+	leftshift = *Source << shift;
+	rightshift = *Source >> (8 - shift);
+	*Destination = (unsigned char)leftshift | rightshift;
+
+	return 0;
 }
 
-int ByteROR(unsigned int value, int shift)
+int ByteROR(int shift, int* Source, int* Destination)
 {
-	unsigned int rightshift, leftshift;
-	if (value >= 256)
+	int rightshift, leftshift;
+
+	if (*Source > 255 || *Source < 0 || shift < 0)
 	{
 		return -1;
 	}
+
+	if (*Source == 0)
+	{
+		*Destination = 0;
+		return 0;
+	}
+
 	shift = shift % 8;
 	if (shift == 0)
 	{
-		return value;
+		*Destination = *Source;
+		return 0;
 	}
-	rightshift = value >> shift;
-	leftshift = value << (8 - shift);
-	return (char)rightshift | leftshift;
+
+	rightshift = *Source >> shift;
+	leftshift = *Source << (8 - shift);
+	*Destination = (unsigned char)rightshift | leftshift;
+
+	return 0;
 }
